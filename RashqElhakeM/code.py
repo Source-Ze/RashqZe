@@ -24,7 +24,7 @@ async def dailygiftt(app,query):
         verified = False
         ask1 = await app.ask(user_id, f'•︙ارسل الان كود التحقق هذا للتاكد من انك لست روبوت : {code} ', filters=filters.user(user_id))
         while not verified:
-            try:
+            #try:
                 user_code = int(ask1.text)
                 if user_code == code:
                     await ask1.reply("• تم التحقق بنجاح من أنك لست روبوت ✅\n\n• ارسل /start")
@@ -40,11 +40,11 @@ async def dailygiftt(app,query):
                         if "user_" in str(i[0]):
                             count+=1
                     for i in xxx:
-                        await app.send_message(i,f"٭ **تم دخول شخص جديد الى البوت الخاص بك 👾**\n\n•__ معلومات العضو الجديد .__\n\n• الاسم : {query.from_user.mention}\n• المعرف : @{query.from_user.username}\n• الايدي : `{query.from_user.id}`\n\n**• عدد الاعضاء الكلي** : {count}")
+                        await app.send_message(i,f"٭ تم دخول شخص جديد الى البوت الخاص بك 👾\n\n• معلومات العضو الجديد .\n\n• الاسم : {query.from_user.mention}\n• المعرف : @{query.from_user.username}\n• الايدي : {query.from_user.id}\n\n• عدد الاعضاء الكلي : {count}")
                     verified = True  # تغيير قيمة verified للخروج من الحلقة
                 else:
                     
                     ask1 = await app.ask(user_id, f'• عذرا الكود الذي ارسلته غير صحيح\n• اعد ارسال الكود مره اخرى', filters=filters.user(user_id))
-            except:
-                
-                ask1 = await app.ask(user_id, f'• يرجي إرسال قيمة رقمية فقط : ( ارقام فقط )\n• اعد ارسال الكود مره اخرى', filters=filters.user(user_id))
+            #except :
+#                
+#                ask1 = await app.ask(user_id, f'• يرجي إرسال قيمة رقمية فقط : ( ارقام فقط )\n• اعد ارسال الكود مره اخرى', filters=filters.user(user_id))
